@@ -9,6 +9,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    loader: async () => {
+      const res = await fetch("http://localhost:3310/api/greet/");
+      return res.json();
+    },
   },
 ]);
 
